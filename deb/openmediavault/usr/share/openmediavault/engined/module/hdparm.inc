@@ -41,8 +41,12 @@ class OMVModuleHdParm extends \OMV\Engine\Module\ServiceAbstract
 	 * Start the managed service.
 	 */
 	public function startService() {
+		/**
+		* Disabled until better aproach, since in Debian Stretch there is no hdparm.service
+		* Config is applied at boottime by udev
 		$systemCtl = new \OMV\System\SystemCtl("hdparm");
 		$systemCtl->reload();
+		*/
 	}
 
 	/**
